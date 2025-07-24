@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import MeetManage from './index.vue'
+import MeetManage from './App.vue'
 import { createPinia } from 'pinia'
 
 const app = createApp(MeetManage)

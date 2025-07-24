@@ -37,12 +37,6 @@ h5-landing-page/
 └── README.md
 ```
 
-| 环境 | 整体打包          | 单页面打包                             | 启动开发环境    |
-| ---- | ----------------- | -------------------------------------- | --------------- |
-| 开发 | `pnpm build`      | `pnpm run build:page meet-manage`      | `pnpm dev`      |
-| 测试 | `pnpm build:test` | `pnpm run build:page:test meet-manage` | `pnpm dev:test` |
-| 生产 | `pnpm build:prod` | `pnpm run build:page:prod meet-manage` | `pnpm dev:prod` |
-
 ## 📥 安装依赖
 
 ```bash

@@ -46,46 +46,25 @@ pnpm install
 ## 🚀 本地开发
 
 ```bash
-pnpm dev:home
-pnpm dev:meetManage
+pnpm dev
 ```
 
 ## 📦 打包构建
 
 ```bash
-pnpm build:home
-pnpm build:meetManage
+pnpm build
 ```
 
 构建后输出路径：
 
 ```
 dist/
-└── meetManage/
-    ├── index.html
-    └── assets/
+└──
+   ├── index.html
+   └── assets/
 ```
 
 ## 🧰 配置说明
-
-### ✅ 多页面配置
-
-```ts
-// vite.config.ts
-const pages = {
-  home: resolve(__dirname, 'src/pages/home/index.html'),
-  meetManage: resolve(__dirname, 'src/pages/meetManage/index.html')
-}
-```
-
-```ts
-// build 配置
-build: {
-  rollupOptions: {
-    input: pages
-  }
-}
-```
 
 ### ✅ px 转 vw 配置
 

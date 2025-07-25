@@ -5,16 +5,30 @@
     { "path": "./tsconfig.node.json" }
   ],
    "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],     
-      "*": ["types/*"]     
-    },
+     "baseUrl": ".",
+     "moduleResolution": "node16",
     "module": "ESNext",
-    "moduleResolution": "Node",
     "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
     "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
     "skipLibCheck": true,
-    "strict": true
-  }
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [],
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
 }

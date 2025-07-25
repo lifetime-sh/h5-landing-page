@@ -1,50 +1,44 @@
-// eslint.config.js
-import vue from 'eslint-plugin-vue'
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import tsParser from '@typescript-eslint/parser'
-import vueParser from 'vue-eslint-parser'
-
-/** @type {import('eslint').Linter.FlatConfig[]} */
-export default [
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        project: './tsconfig.app.json',
-      },
-    },
-    plugins: {
-      '@typescript-eslint': tsPlugin,
-    },
-    rules: {
-      'no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn'],
-      '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/explicit-module-boundary-types': 'error',
-      '@typescript-eslint/no-unsafe-assignment': 'error',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-var-requires': 'error',
-      '@typescript-eslint/no-explicit-any': 'error',
-    },
+export default {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true
   },
-  {
-    files: ['**/*.vue'],
-    languageOptions: {
-      parser: vueParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
-    },
-    plugins: {
-      vue,
-    },
-    rules: {
-      'vue/no-template-shadow': 'off',
+  globals: {
+    'touch': true,
+    'BMap': true,
+    'BMapGL': true,
+    'AMap': true,
+    'AMapUI': true,
+    'watermark': true,
+    'Swiper': true,
+    'SiriWave': true,
+    'wx': true,
+    'echarts': true,
+    ftwo: true,
+    AHVP: true
+  },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser'
+  },
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'plugin:vue/strongly-recommended',
+    'eslint:recommended',
+    '@vue/typescript/recommended'
+  ],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx', '*.vue'],
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ],
+  rules: {
+    'vue/no-template-shadow': 'off',
     'vue/multi-word-component-names': ['off'],
     '@typescript-eslint/no-explicit-any': ['off'], // 关闭any类型时的警告
     '@typescript-eslint/ban-ts-ignore': ['off'], // 允许使用ts-ignore
@@ -286,9 +280,5 @@ export default [
     'valid-typeof': 'error',
     // 要求 IIFE 使用括号括起来
     'wrap-iife': 'error'
-    },
-  },
-  {
-    ignores: ['dist/**', 'node_modules/**'],
-  },
-]
+  }
+};

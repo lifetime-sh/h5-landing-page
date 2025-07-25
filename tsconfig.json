@@ -1,34 +1,20 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-   "compilerOptions": {
-     "baseUrl": ".",
-     "moduleResolution": "node16",
-    "module": "Node16",
-    "target": "ESNext",
-    "lib": ["DOM", "ESNext"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
     "strict": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true,  // 强制显式 any 声明
     "strictNullChecks": true,
-    "allowJs": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [],
-    "typeRoots": [
-      "./src/types",
-      "./node_modules/@types"
-    ],
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
+  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }

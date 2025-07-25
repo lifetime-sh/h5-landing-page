@@ -16,7 +16,8 @@
         :style="{
           background: `url(${item.img})no-repeat
           center center`
-        }">
+        }"
+        @click="() => router.push(item.path)">
         <span :style="{ color: index === 1 || index === 2 || index === 5 ? '#fff' : '#1a63ff' }">{{ item.name }}</span>
       </div>
     </div>
@@ -38,6 +39,7 @@ interface MeetInfo {
 interface MeetNavItem {
   name: string
   img: string
+  path: string
 }
 
 const meetInfo = ref<MeetInfo>({
@@ -48,24 +50,42 @@ const meetInfo = ref<MeetInfo>({
 })
 
 const meetNav = ref<MeetNavItem[]>([
-  { name: '会议信息', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/info.png' },
-  { name: '专家风采', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/expert.png' },
-  { name: '会议通知', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/message.png' },
-  { name: '大会日程', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/date.png' },
-  { name: '报名缴费', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/apply.png' },
-  { name: '会场交通', img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/traffic.png' }
+  {
+    name: '会议信息',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/info.png',
+    path: '/meetInfo'
+  },
+  {
+    name: '专家风采',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/expert.png',
+    path: '/expertShow'
+  },
+  {
+    name: '会议通知',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/message.png',
+    path: '/meetMessage'
+  },
+  {
+    name: '大会日程',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/date.png',
+    path: '/meetTime'
+  },
+  {
+    name: '报名缴费',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/apply.png',
+    path: '/meetApply'
+  },
+  {
+    name: '会场交通',
+    img: 'https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/traffic.png',
+    path: '/meetTraffic'
+  }
 ])
 </script>
 <style lang="scss" scoped>
 .meet-manage {
   width: 100%;
   height: 100vh;
-  background: url('https://beijing-medical-1.obs.cn-north-4.myhuaweicloud.com/static/image/meetingBG.png') no-repeat
-    center center;
-  background-size: cover;
-  text-align: center;
-  padding: 20px 25px;
-  box-sizing: border-box;
   .title {
     font-weight: 600;
     font-size: 32px;

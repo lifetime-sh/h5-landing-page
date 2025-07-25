@@ -85,7 +85,7 @@ const meetNav = ref<MeetNavItem[]>([
 <style lang="scss" scoped>
 .meet-manage {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   .title {
     font-weight: 600;
     font-size: 32px;

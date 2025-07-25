@@ -6,14 +6,17 @@ const routes: RouteRecordRaw[] = [
     redirect: '/home'
   },
   {
-    path: '/home',
+    path: '/home', // 首页
     component: () => import('@/views/MeetManage/index.vue')
   },
   {
-    path: '/meetInfo',
+    path: '/meetInfo', // 会议信息
     component: () => import('@/views/MeetManage/meetInfo.vue')
+  },
+  {
+    path: '/expertShow', // 专家风采
+    component: () => import('@/views/MeetManage/expertShow.vue')
   }
-  // 后续扩展路由
 ]
 
 const router = createRouter({

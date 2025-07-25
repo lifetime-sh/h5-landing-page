@@ -16,6 +16,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/expertShow', // 专家风采
     component: () => import('@/views/MeetManage/expertShow.vue')
+  },
+  {
+    path: '/meetTime', // 大会日程
+    component: () => import('@/views/MeetManage//meetTime.vue')
   }
 ]
 

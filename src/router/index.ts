@@ -24,6 +24,14 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/meetApply', // 报名缴费
     component: () => import('@/views/MeetManage//meetApply.vue')
+  },
+  {
+    path: '/meetTraffic', // 会场交通
+    component: () => import('@/views/MeetManage//meetTraffic.vue')
+  },
+  {
+    path: '/meetMessage', // 会场通知
+    component: () => import('@/views/MeetManage//meetMessage.vue')
   }
 ]
 
